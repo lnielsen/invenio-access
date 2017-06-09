@@ -175,7 +175,8 @@ def changed_action_action(target, value, oldvalue, initiator):
     is updated.
     """
     current_access.delete_action_cache(value)
-    current_access.delete_action_cache(oldvalue)
+    if oldvalue:
+        current_access.delete_action_cache(oldvalue)
 
 
 def changed_owner_action(target, value, oldvalue, initiator):
